@@ -112,10 +112,6 @@ inhibit-startup-echo-area-message t)
 (require 'expand-region)
 (global-set-key (kbd "C-=") 'er/expand-region)
 
-; iMessage hook
-(add-to-list 'load-path "~/code/elisp/iMessage/")
-(require 'imessage)
-
 ; magit! 
 (require 'package)
 (add-to-list 'package-archives
