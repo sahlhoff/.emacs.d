@@ -132,6 +132,9 @@ inhibit-startup-echo-area-message t)
 (add-hook 'css-mode-hook 'rainbow-mode)
 (add-hook 'js2-jsx-mode 'rainbow-mode)
 
+; indentation for css
+(setq css-indent-offset 2)
+
 ;; Make windmove work in org-mode:
 (add-hook 'org-shiftup-final-hook 'windmove-up)
 (add-hook 'org-shiftleft-final-hook 'windmove-left)
@@ -149,3 +152,24 @@ inhibit-startup-echo-area-message t)
 ;; Set your lisp system and, optionally, some contribs
 (setq inferior-lisp-program "/opt/sbcl/bin/sbcl")
 (slime-setup '(slime-fancy))
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (sass-mode zenburn-theme web-mode sqlite smooth-scrolling smooth-scroll slime restclient rainbow-mode neotree multi-term markdown-mode magit helm heap expand-region exec-path-from-shell emacsql elpy company-tern cider camcorder birds-of-paradise-plus-theme auto-complete ac-js2))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+
+; search region on google
+(defun browse-lucky (start end)
+  (interactive "r")
+  (let ((q (buffer-substring-no-properties start end)))
+    (browse-url (concat "http://www.google.com/search?btnI&q="
+			(url-hexify-string q)))))
