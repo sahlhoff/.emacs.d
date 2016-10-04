@@ -167,6 +167,7 @@ inhibit-startup-echo-area-message t)
  ;; If there is more than one, they won't work right.
  )
 
+
 ;; search region on google
 (defun browse-lucky (start end)
   (interactive "r")
